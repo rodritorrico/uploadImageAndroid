@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "492466961636",
+    "firebase_url": "https://tinder-pet3.firebaseio.com",
+    "project_id": "tinder-pet3",
+    "storage_bucket": "tinder-pet3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492466961636:android:e14e5429a25572aaa440f1",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492466961636-6l0m2gvel5cjc6sf281lj929iaiovb52.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.login",
+            "certificate_hash": "55e6fba1e36fea673dd5fe3ac6d4ed559d8e4537"
+          }
+        },
+        {
+          "client_id": "492466961636-6cdjk2mmogrq368vdjqkcrvmcm86alpb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUlYcnc73HBD7qZ0jTLfkl0UDRw189G0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492466961636-6cdjk2mmogrq368vdjqkcrvmcm86alpb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492466961636:android:a41e1f83ce8d23f5a440f1",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492466961636-2h4ms991et5vf6biiue9ot653ttuhf8s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "18d047b81dcaa8455f23468f51b57e5f4d608b61"
+          }
+        },
+        {
+          "client_id": "492466961636-6cdjk2mmogrq368vdjqkcrvmcm86alpb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUlYcnc73HBD7qZ0jTLfkl0UDRw189G0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492466961636-6cdjk2mmogrq368vdjqkcrvmcm86alpb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492466961636:android:905fcff380680c3fa440f1",
+        "android_client_info": {
+          "package_name": "com.pikachu.uploadimage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492466961636-oss980maoku7fsfpcu34dn1lrfatdmkt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pikachu.uploadimage",
+            "certificate_hash": "55e6fba1e36fea673dd5fe3ac6d4ed559d8e4537"
+          }
+        },
+        {
+          "client_id": "492466961636-6cdjk2mmogrq368vdjqkcrvmcm86alpb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUlYcnc73HBD7qZ0jTLfkl0UDRw189G0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492466961636-6cdjk2mmogrq368vdjqkcrvmcm86alpb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
