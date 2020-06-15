@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -17,6 +18,12 @@ class MainActivity : AppCompatActivity() {
     private var REQUEST_CODE = 43;
     private lateinit var path: String
     private lateinit var fileName: String
+
+    private var imagePreview: ImageView? = null
+    private val PICK_IMAGE_REQUEST = 1
+    private var filePath: Uri? = null
+    private var firebaseStorage: FirebaseStorage? = null
+    private var storageReference: StorageReference? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,7 +76,7 @@ class MainActivity : AppCompatActivity() {
                 var uri = data.data
                 println(uri?.path)
                 path = uri?.path!!
-                filePath.text = uri?.path
+
             }
         }
 
