@@ -9,17 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var storageRef: StorageReference
-    private var REQUEST_CODE = 43;
-    private lateinit var path: String
-    private lateinit var fileName: String
 
-    private var imagePreview: ImageView? = null
     private val PICK_IMAGE_REQUEST = 1
     private var filePath: Uri? = null
     private var firebaseStorage: FirebaseStorage? = null
@@ -28,58 +22,62 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        storageRef = FirebaseStorage.getInstance().reference;
+        firebaseStorage = FirebaseStorage.getInstance()
+        storageReference = FirebaseStorage.getInstance().reference
+        uploadButton.setOnClickListener { ImagePicker() }
+        confirmButton.setOnClickListener { uploadImage() }
 
 
-        uploadButton.setOnClickListener {
-            startSearch()
-        }
-
-        confirmButton.setOnClickListener {
-            uploadImage(path,"panchito.jpg")
-
-        }
     }
 
-    private fun uploadImage(pathName: String, fileName: String) {
 
-        var file = File(pathName)
-        var fileUri = Uri.fromFile(file)
-
-        println(file)
-
-
-        val fileRef: StorageReference = storageRef.child("pets/panchito.jpg")
-
-        fileRef.putFile(fileUri)
-            .addOnSuccessListener { taskSnapshot -> // Get a URL to the uploaded content
-                val downloadUrl = taskSnapshot.storage.downloadUrl
-            }
-            .addOnFailureListener {
-                println("error")
-            }
-    }
-
-    private fun startSearch() {
-        val intent =  Intent (Intent.ACTION_OPEN_DOCUMENT)
+    private fun ImagePicker() {
+        val intent = Intent()
         intent.type = "image/*"
-        intent.addCategory(Intent.CATEGORY_OPENABLE)
-        startActivityForResult(intent, REQUEST_CODE)
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
     }
 
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            if (data != null) {
-                var uri = data.data
-                println(uri?.path)
-                path = uri?.path!!
-
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
+            if (data == null || data.data == null) {
+                return
             }
+            filePath = data.data
+            try {
+                imagePreview.setImageURI(null);
+                imagePreview.setImageURI(filePath)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+
         }
-
-
     }
+
+    private fun uploadImage() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+
+    private fun upload(pathName: String, fileName: String) {
+//
+//        var file = File(pathName)
+//        var fileUri = Uri.fromFile(file)
+//
+//        println(file)
+//
+//
+//        val fileRef: StorageReference = firebaseStorage
+//
+//        fileRef.putFile(fileUri)
+//            .addOnSuccessListener { taskSnapshot -> // Get a URL to the uploaded content
+//                val downloadUrl = taskSnapshot.storage.downloadUrl
+//            }
+//            .addOnFailureListener {
+//                println("error")
+//            }
+    }
+
 }
